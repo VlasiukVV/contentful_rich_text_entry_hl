@@ -186,6 +186,7 @@ class ContentfulRichText {
             ?.map<TextSpan>(
               (node) => _processInlineNode(
                 node,
+                uri: node[]
               ) as TextSpan,
             )
             ?.toList(),
