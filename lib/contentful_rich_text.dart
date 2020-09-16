@@ -183,6 +183,7 @@ class ContentfulRichText {
       String link = '';
       try {
         link = node['data']['target']['sys']['id'];
+        //node['data'] = {'uri': link};
       } catch (e) {}
       return singletonRenderers.renderNode['entry-hyperlink'](
         node,
