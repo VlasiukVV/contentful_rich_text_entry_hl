@@ -180,13 +180,17 @@ class ContentfulRichText {
       );
     }
     if (node['nodeType'] == 'entry-hyperlink') {
+      String link = '';
+      try {
+        link = node['data']['target']['sys']['id'];
+      } catch (e) {}
       return singletonRenderers.renderNode['entry-hyperlink'](
         node,
         (nodes) => nodes
             ?.map<TextSpan>(
               (node) => _processInlineNode(
                 node,
-                uri: node[]
+                uri: link,
               ) as TextSpan,
             )
             ?.toList(),
