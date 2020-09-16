@@ -1,0 +1,1 @@
+contentful_rich_text_entry_hl
